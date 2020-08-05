@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TinyMapper</name>
+    </assembly>
+    <members>
+        <member name="T:Nelibur.ObjectMapper.Core.DataStructures.Option`1">
+            <summary>
+                https://github.com/Nelibur/Nelibur
+            </summary>
+        </member>
+        <member name="T:Nelibur.ObjectMapper.Core.Error">
+            <summary>
+                https://github.com/Nelibur/Nelibur
+            </summary>
+        </member>
+        <member name="M:Nelibur.ObjectMapper.Core.Extensions.EnumerableExtensions.Iter``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+                Apply the given function to each element of the collection
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value">Input collection</param>
+            <param name="action">Given function</param>
+        </member>
+        <member name="M:Nelibur.ObjectMapper.Core.Extensions.EnumerableExtensions.IterI``1(System.Collections.Generic.IEnumerable{``0},System.Action{System.Int32,``0})">
+            <summary>
+                Apply the given function to each element of the collection.
+                The integer passed to the function indicates the index of element.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value">Input collection</param>
+            <param name="action">Given function</param>
+        </member>
+        <member name="M:Nelibur.ObjectMapper.Core.Extensions.EnumerableExtensions.IterSafe``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0},System.Action{System.Exception})">
+            <summary>
+                Apply the given function to each element of the collection
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value">Input collection</param>
+            <param name="action">Given function</param>
+            <param name="exceptionHandler">Exception handler action</param>
+        </member>
+        <member name="T:Nelibur.ObjectMapper.Core.Extensions.ObjectExtensions">
+            <summary>
+                https://github.com/Nelibur/Nelibur
+            </summary>
+        </member>
+        <member name="T:Nelibur.ObjectMapper.Core.Extensions.OptionExtensions">
+            <summary>
+                https://github.com/Nelibur/Nelibur
+            </summary>
+        </member>
+        <member name="T:Nelibur.ObjectMapper.ITinyMapperConfig">
+            <summary>
+                Configuration for TinyMapper
+            </summary>
+        </member>
+        <member name="M:Nelibur.ObjectMapper.ITinyMapperConfig.NameMatching(System.Func{System.String,System.String,System.Boolean})">
+            <summary>
+                Custom name matching function used for auto bindings
+            </summary>
+            <param name="nameMatching">Function to match names</param>
+        </member>
+        <member name="M:Nelibur.ObjectMapper.ITinyMapperConfig.Reset">
+            <summary>
+                Reset settings to default
+            </summary>
+        </member>
+        <member name="T:Nelibur.ObjectMapper.TinyMapper">
+            <summary>
+            TinyMapper is an object to object mapper for .NET. The main advantage is performance.
+            TinyMapper allows easily map object to object, i.e. properties or fields from one object to another.
+            </summary>
+        </member>
+        <member name="M:Nelibur.ObjectMapper.TinyMapper.Bind``2">
+            <summary>
+            Create a one-way mapping between Source and Target types.
+            </summary>
+            <typeparam name="TSource">Source type.</typeparam>
+            <typeparam name="TTarget">Target type.</typeparam>
+            <remarks>The method is thread safe.</remarks>
+        </member>
+        <member name="M:Nelibur.ObjectMapper.TinyMapper.Bind(System.Type,System.Type)">
+            <summary>
+            Create a one-way mapping between Source and Target types.
+            </summary>
+            <param name="sourceType">Source type.</param>
+            <param name="targetType">Target type.</param>
+            <remarks>The method is thread safe.</remarks>
+        </member>
+        <member name="M:Nelibur.ObjectMapper.TinyMapper.Bind``2(System.Action{Nelibur.ObjectMapper.Bindings.IBindingConfig{``0,``1}})">
+            <summary>
+            Create a one-way mapping between Source and Target types.
+            </summary>
+            <typeparam name="TSource">Source type.</typeparam>
+            <typeparam name="TTarget">Target type.</typeparam>
+            <param name="config">BindingConfig for custom binding.</param>
+            <remarks>The method is thread safe.</remarks>
+        </member>
+        <member name="M:Nelibur.ObjectMapper.TinyMapper.BindingExists``2">
+            <summary>
+            Find out if a binding exists from Source to Target.
+            </summary>
+            <typeparam name="TSource">Source type.</typeparam>
+            <typeparam name="TTarget">Target type.</typeparam>
+            <returns>True if exists, otherwise - False.</returns>
+            <remarks>The method is thread safe.</remarks>
+        </member>
+        <member name="M:Nelibur.ObjectMapper.TinyMapper.Map``2(``0,``1)">
+            <summary>
+            Maps the source to Target type.
+            The method can be called in parallel to Map methods, but cannot be called in parallel to Bind method.
+            </summary>
+            <typeparam name="TSource">Source type.</typeparam>
+            <typeparam name="TTarget">Target type.</typeparam>
+            <param name="source">Source object.</param>
+            <param name="target">Target object.</param>
+            <returns>Mapped object.</returns>
+        </member>
+        <member name="M:Nelibur.ObjectMapper.TinyMapper.Map(System.Type,System.Type,System.Object,System.Object)">
+            <summary>
+            Maps the source to Target type.
+            The method can be called in parallel to Map methods, but cannot be called in parallel to Bind method.
+            </summary>
+            <param name="sourceType">Source type.</param>
+            <param name="targetType">Target type.</param>
+            <param name="source">Source object.</param>
+            <param name="target">Target object.</param>
+            <returns>Mapped object.</returns>
+        </member>
+        <member name="M:Nelibur.ObjectMapper.TinyMapper.Config(System.Action{Nelibur.ObjectMapper.ITinyMapperConfig})">
+            <summary>
+            Configure the Mapper.
+            </summary>
+            <param name="config">Lambda to provide config settings</param>
+        </member>
+        <member name="M:Nelibur.ObjectMapper.TinyMapper.Map``1(System.Object)">
+            <summary>
+            Maps the source to Target type.
+            The method can be called in parallel to Map methods, but cannot be called in parallel to Bind method.
+            </summary>
+            <typeparam name="TTarget">Target type.</typeparam>
+            <param name="source">Source object [Not null].</param>
+            <returns>Mapped object. The method can be called in parallel to Map methods, but cannot be called in parallel to Bind method.</returns>
+        </member>
+        <member name="T:Nelibur.ObjectMapper.TinyMapperException">
+            <summary>
+                Exception during mapping or binding
+            </summary>
+        </member>
+    </members>
+</doc>

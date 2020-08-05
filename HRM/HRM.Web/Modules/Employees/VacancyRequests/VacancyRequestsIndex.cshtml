@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.Employees.VacancyRequests.EntityPlural");
+}
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new HRM.Employees.VacancyRequestsGrid($('#GridDiv'), {}).init();
+        //addLabel();
+        Q.initFullHeightGridPage($('#GridDiv'));
+        //function addLabel() {
+        //    //$(".slick-footerrow-columns").first().text('Total: Goods: Shipping: Taxes:');
+        //    $(".slick-footerrow-columns").first().children().first().text("Total");
+        //}
+        
+    });
+</script>
+
+
+

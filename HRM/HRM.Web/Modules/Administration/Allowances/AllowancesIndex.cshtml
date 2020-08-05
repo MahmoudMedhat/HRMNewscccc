@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.Administration.Allowances.EntityPlural");
+}
+
+<div id="GridDiv"></div>
+
+
+
+<script type="text/javascript">
+    jQuery(function () {
+        new HRM.Administration.AllowancesGrid($('#GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>

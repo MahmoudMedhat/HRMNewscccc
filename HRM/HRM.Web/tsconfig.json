@@ -1,0 +1,22 @@
+﻿{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "emitBOM": true,
+    "noEmitHelpers": true,
+    "sourceMap": true,
+    "outFile": "Scripts/site/HRM.Web.js",
+    "target": "es5",
+    "typeRoots": [
+      "./node_modules/@types/"
+    ],
+    "lib": [ "es2015", "es2016" ]
+  },
+  "include": [
+    "./Imports/",
+    "./Modules/",
+    "./Scripts/typings/"
+  ]
+}
